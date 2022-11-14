@@ -10,7 +10,7 @@ const { env: { NODE_ENV }} = process
 
 const initialState = {
   hello: 'Hello',
-  world: 'World',
+  world: 'World!',
   NODE_ENV,
   modal: {},
 }
