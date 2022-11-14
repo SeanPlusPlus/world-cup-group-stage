@@ -5,20 +5,14 @@ const Home = () => {
 
   const {
     hello,
+    world,
   } = useContext(GlobalContext)
 
   return (
-    <>
-      <div className="hero">
-        <div className="hero-content text-center mt-0 ml-0 mr-0 pr-0 pl-0 pt-2">
-          <div className="max-w-md">
-            <div className="mb-3">
-              {hello}
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+    <div className="flex mb-4">
+      <div className="w-1/2 h-12">{hello}</div>
+      <div className="w-1/2 h-12">{world}</div>
+    </div>
   )
 }
 

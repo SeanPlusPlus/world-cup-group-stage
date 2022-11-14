@@ -9,7 +9,8 @@ import { log } from '../utils/logger'
 const { env: { NODE_ENV }} = process
 
 const initialState = {
-  hello: 'Hello World!',
+  hello: 'Hello',
+  world: 'World',
   NODE_ENV,
   modal: {},
 }
