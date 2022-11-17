@@ -7,13 +7,14 @@ const Entries = () => {
   const {
     entries,
     COUNTRIES,
-    // setEntries,
+    setEntries,
     setCountries,
   } = useContext(GlobalContext)
 
   const handleClick = (e) => {
-    const { standings } = setPerfect(e, COUNTRIES, entries)
+    const { standings, updatedEntries } = setPerfect(e, COUNTRIES, entries)
     setCountries(standings)
+    setEntries(updatedEntries)
   }
 
   if (!entries) {

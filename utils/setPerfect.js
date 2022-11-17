@@ -1,9 +1,9 @@
+import _orderBy from "lodash/orderBy"
+import { getScores } from "./getScores"
+
 const GROUPS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 
 export const setPerfect = (entry, countries, entries) => {
-  console.log(entry)
-  console.log(entries)
-
   const standings = {}
   GROUPS.forEach((g) => {
     const arr = countries[g]
@@ -28,5 +28,7 @@ export const setPerfect = (entry, countries, entries) => {
     })
   })
 
-  return { standings } 
+  const updatedEntries = _orderBy(getScores(entries, standings), ['total'], ['desc'])
+
+  return { standings, updatedEntries } 
 }

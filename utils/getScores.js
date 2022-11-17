@@ -6,6 +6,7 @@ const SECOND = 3
 const GROUPS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 
 export const getScores = (entries, rankings) => {
+  console.log(entries, rankings);
   const FINAL = {}
   GROUPS.forEach((g) => {
     const first = _find(rankings[g], (country) => country.rank === 'first')
