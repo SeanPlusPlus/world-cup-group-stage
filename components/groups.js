@@ -33,12 +33,12 @@ const Groups = () => {
         <ul key={g} className="menu bg-base-100 mb-4 pb-2">
           <li className="menu-title pt-2">
             <div>
-              <span>Group {g}</span>
               {_includes(invalidGroups, g) && (
-                <span role="img" aria-label="invalid" className="ml-1">
+                <span role="img" aria-label="invalid" className="mr-1">
                   ❌
                 </span>
               )}
+              <span>Group {g}</span>
             </div>
           </li>
           {COUNTRIES[g].map((c) => (

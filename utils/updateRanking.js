@@ -33,7 +33,9 @@ export const updateRanking = (group, country, COUNTRIES, entries, invalidGroups)
   }
 
   const ranked = updatedGroup.filter((c) => c.rank).map((c) => c.rank)
-  let valid
+
+  // check if the score for this group is valid
+  let valid = null
   if (ranked.length <= 1) {
     valid = true
   } else if (ranked.length === 2) {
@@ -42,13 +44,23 @@ export const updateRanking = (group, country, COUNTRIES, entries, invalidGroups)
     valid = false
   }
 
-  let invalid
+  console.log('valid', valid);
+
+  // update the invalid set of groups
+  let invalid = []
   if (valid) {
     invalid = _remove(invalidGroups, group)
   } else {
     if (!_includes(invalidGroups, group)) {
       invalid = [...invalidGroups, group]
+    } else {
+      invalid = [...invalidGroups]
     }
+  }
+
+  // only if all groups are valid will we update the entries
+  if (invalid.length === 0) {
+
   }
 
   return { rankings, entries, invalid } 
