@@ -1,17 +1,22 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { GlobalContext } from '../context/GlobalState'
 import { updateRanking } from '../utils/updateRanking'
+import _includes from 'lodash/includes'
 
 const Groups = () => {
+  const [invalidGroups, setInvalidGroups] = useState([])
 
   const {
+    entries,
     GROUPS,
     COUNTRIES,
     setCountries,
   } = useContext(GlobalContext)
 
   const handleClick = (group, country) => {
-    setCountries(updateRanking(group, country, COUNTRIES))
+    const { rankings, invalid } = updateRanking(group, country, COUNTRIES, entries, invalidGroups)
+    setInvalidGroups(invalid)
+    setCountries(rankings)
   }
 
   if (!GROUPS) {
@@ -27,7 +32,14 @@ const Groups = () => {
       {GROUPS.map((g) => (
         <ul key={g} className="menu bg-base-100 mb-4 pb-2">
           <li className="menu-title pt-2">
-            <span>Group {g}</span>
+            <div>
+              <span>Group {g}</span>
+              {_includes(invalidGroups, g) && (
+                <span role="img" aria-label="invalid" className="ml-1">
+                  ❌
+                </span>
+              )}
+            </div>
           </li>
           {COUNTRIES[g].map((c) => (
             <li key={c.name} onClick={() => handleClick(g, c)}>
