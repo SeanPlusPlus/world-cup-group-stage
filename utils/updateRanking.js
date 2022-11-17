@@ -62,8 +62,8 @@ export const updateRanking = (group, country, COUNTRIES, entries, invalidGroups)
   let updatedEntries = []
   if (invalid.length === 0) {
     updatedEntries = _orderBy(getScores(entries, rankings), ['total'], ['desc'])
-    console.log('*', updatedEntries);
   } else {
+    console.log('RESET ENTRY SCORES');
     updatedEntries = entries.map((e) => ({
       ...e,
       total: 0

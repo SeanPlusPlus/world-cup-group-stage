@@ -17,11 +17,13 @@ export const getScores = (entries, rankings) => {
     const keys = _sortBy(Object.keys(FINAL))
     keys.forEach((k, i) => {
       const isFirstSeed = i % 2 === 0
+
       if (entry[k].name === FINAL[k] && isFirstSeed) {
         entry[k].score = FIRST
-      }
-      if (entry[k].name === FINAL[k] && !isFirstSeed) { // second place
+      } else if (entry[k].name === FINAL[k] && !isFirstSeed) { // second place
         entry[k].score = SECOND
+      }  else {
+        entry[k].score = 0
       }
     })
 
