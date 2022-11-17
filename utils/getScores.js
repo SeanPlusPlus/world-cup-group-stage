@@ -25,7 +25,10 @@ export const getScores = (entries, rankings) => {
       }
     })
 
-    entry.total = keys.filter((k) => (entry[k].score)).map((k) => (entry[k].score)).reduce((partialSum, a) => partialSum + a, 0)
+    entry.total = keys
+      .filter((k) => entry[k].score)
+      .map((k) => entry[k].score)
+      .reduce((a, b) => a + b, 0)
 
     return entry
   })
