@@ -10,6 +10,7 @@ const COUNTRIES = {
       flag: '🇶🇦'
     },
     {
+      rank: 'second',
       name: 'Ecuador',
       flag: '🇪🇨'
     },
@@ -18,6 +19,7 @@ const COUNTRIES = {
       flag: '🇸🇳'
     },
     {
+      rank: 'first',
       name: 'Netherlands',
       flag: '🇳🇱'
     }
