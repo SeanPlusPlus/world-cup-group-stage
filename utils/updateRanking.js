@@ -1,5 +1,6 @@
 import _remove from 'lodash/remove'
 import _includes from 'lodash/includes'
+import { getScores } from './getScores'
 
 export const updateRanking = (group, country, COUNTRIES, entries, invalidGroups) => {
   const updatedGroup = COUNTRIES[group].map((c) => {
@@ -59,10 +60,8 @@ export const updateRanking = (group, country, COUNTRIES, entries, invalidGroups)
   // only if all groups are valid will we update the entries
   let updatedEntries = []
   if (invalid.length === 0) {
-    console.log('SCORING TIME', entries)
-    updatedEntries = [...entries]
+    updatedEntries = getScores(entries, rankings)
   } else {
-    console.log('invalidate entry scores!!!!', entries)
     updatedEntries = entries.map((e) => ({
       ...e,
       total: null
