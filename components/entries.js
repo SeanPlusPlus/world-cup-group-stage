@@ -20,15 +20,8 @@ const Entries = () => {
   }
 
   return (
-    <div className="mt-2 mr-3 ml-3">
-      <div className="menu bg-base-100">
-        <div className="menu-title pt-2">
-          <span>
-            Entries
-          </span>
-        </div>
-      </div>
-      <table className="table table-compact w-full border-0">
+    <div className="pr-4 mt-3">
+      <table className="table table-compact w-full border-0 ml-2">
         <tbody>
           {entries.map((e) => (
             <tr key={e.name}>

@@ -28,11 +28,11 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex mb-4">
-      <div className="w-1/2 h-12">
+    <div className="flex">
+      <div className="w-1/2">
         <Groups />
       </div>
-      <div className="w-1/2 h-12">
+      <div className="w-1/2">
         <Entries />
       </div>
     </div>
