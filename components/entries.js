@@ -7,6 +7,10 @@ const Entries = () => {
     entries
   } = useContext(GlobalContext)
 
+  const handleClick = (e) => {
+    console.log(e)
+  }
+
   if (!entries) {
     return <></>
   }
@@ -24,7 +28,7 @@ const Entries = () => {
         <tbody>
           {entries.map((e) => (
             <tr key={e.name}>
-              <td>
+              <td onClick={() => handleClick(e)} className="hover:cursor-pointer hover:text-sky-500">
                 {e.name}
               </td>
               <td>
