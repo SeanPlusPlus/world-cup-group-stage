@@ -1,14 +1,18 @@
 import { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
+import { setPerfect } from '../utils/setPerfect'
 
 const Entries = () => {
 
   const {
-    entries
+    entries,
+    COUNTRIES,
+    // setEntries,
+    // setCountries,
   } = useContext(GlobalContext)
 
   const handleClick = (e) => {
-    console.log(e)
+    setPerfect(e, COUNTRIES, entries)
   }
 
   if (!entries) {
