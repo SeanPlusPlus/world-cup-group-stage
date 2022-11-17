@@ -12,6 +12,21 @@ export default (state, action) => {
         ...state,
         modal: action.payload,
       }
+    case 'UPDATE_GROUPS':
+      return {
+        ...state,
+        GROUPS: action.payload,
+      }
+    case 'UPDATE_COUNTRIES':
+      return {
+        ...state,
+        COUNTRIES: action.payload,
+      }
+    case 'UPDATE_ENTRIES':
+      return {
+        ...state,
+        entries: action.payload,
+      }
     default:
       return state;
   }

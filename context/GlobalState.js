@@ -9,10 +9,11 @@ import { log } from '../utils/logger'
 const { env: { NODE_ENV }} = process
 
 const initialState = {
-  hello: 'Hello',
-  world: 'World!',
   NODE_ENV,
   modal: {},
+  GROUPS: null,
+  COUNTRIES: null,
+  entries: null,
 }
 
 export const GlobalContext = createContext(initialState);
@@ -30,6 +31,28 @@ export const GlobalProvider = ({
     });
   }
 
+  function setGroups(data) {
+    dispatch({
+      type: 'UPDATE_GROUPS',
+      payload: data
+    });
+  }
+
+  function setCountries(data) {
+    dispatch({
+      type: 'UPDATE_COUNTRIES',
+      payload: data
+    });
+  }
+
+  function setEntries(data) {
+    dispatch({
+      type: 'UPDATE_ENTRIES',
+      payload: data
+    });
+  }
+
+
   useEffect(() => {
     log('state', 'rgb(217, 38, 169)', state);
   }, [state])
@@ -38,6 +61,9 @@ export const GlobalProvider = ({
       {
         ...state,
         setModal,
+        setGroups,
+        setCountries,
+        setEntries,
       }
     } > {
       children
