@@ -44,8 +44,6 @@ export const updateRanking = (group, country, COUNTRIES, entries, invalidGroups)
     valid = false
   }
 
-  console.log('valid', valid);
-
   // update the invalid set of groups
   let invalid = []
   if (valid) {
@@ -59,9 +57,17 @@ export const updateRanking = (group, country, COUNTRIES, entries, invalidGroups)
   }
 
   // only if all groups are valid will we update the entries
+  let updatedEntries = []
   if (invalid.length === 0) {
-
+    console.log('SCORING TIME', entries)
+    updatedEntries = [...entries]
+  } else {
+    console.log('invalidate entry scores!!!!', entries)
+    updatedEntries = entries.map((e) => ({
+      ...e,
+      total: null
+    }))
   }
 
-  return { rankings, entries, invalid } 
+  return { rankings, updatedEntries, invalid } 
 }
