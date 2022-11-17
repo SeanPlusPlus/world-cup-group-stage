@@ -13,7 +13,6 @@ const Entries = () => {
 
   const handleClick = (e) => {
     const { standings } = setPerfect(e, COUNTRIES, entries)
-    console.log('stand', standings);
     setCountries(standings)
   }
 

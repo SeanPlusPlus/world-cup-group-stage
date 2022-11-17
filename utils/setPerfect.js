@@ -2,7 +2,7 @@ const GROUPS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 
 export const setPerfect = (entry, countries, entries) => {
   console.log(entry)
-  console.log(countries)
+  console.log(entries)
 
   const standings = {}
   GROUPS.forEach((g) => {
@@ -13,7 +13,6 @@ export const setPerfect = (entry, countries, entries) => {
     const second = entry[str2].name
     standings[g] = arr.map((el) => {
       if (el.name === first) {
-        console.log('***', el);
         return {
           ...el,
           rank: 'first'
@@ -24,7 +23,7 @@ export const setPerfect = (entry, countries, entries) => {
           rank: 'second'
         }
       } else {
-        return { ...el }
+        return { ...el, rank: undefined }
       }
     })
   })
