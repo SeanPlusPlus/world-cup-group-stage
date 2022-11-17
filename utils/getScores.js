@@ -1,5 +1,8 @@
 import _find from 'lodash/find'
+const _sortBy = require('lodash/sortBy')
 
+const FIRST = 7
+const SECOND = 3
 const GROUPS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 
 export const getScores = (entries, rankings) => {
@@ -7,11 +10,23 @@ export const getScores = (entries, rankings) => {
   GROUPS.forEach((g) => {
     const first = _find(rankings[g], (country) => country.rank === 'first')
     const second = _find(rankings[g], (country) => country.rank === 'second')
-    FINAL[`GROUP_${g}_1`] = first ? first.name : ''
-    FINAL[`GROUP_${g}_2`] = second ? second.name : ''
+    FINAL[`Group_${g}_1`] = first ? first.name : ''
+    FINAL[`Group_${g}_2`] = second ? second.name : ''
   })
-  return entries.map((e) => {
-    console.log(e, rankings, FINAL)
-    return e
+  return entries.map((entry) => {
+    const keys = _sortBy(Object.keys(FINAL))
+    keys.forEach((k, i) => {
+      const isFirstSeed = i % 2 === 0
+      if (entry[k].name === FINAL[k] && isFirstSeed) {
+        entry[k].score = FIRST
+        entry.total += FIRST
+      }
+      if (entry[k].name === FINAL[k] && !isFirstSeed) { // second place
+        entry[k].score = SECOND
+        entry.total += SECOND
+      }
+    })
+
+    return entry
   })
 }
