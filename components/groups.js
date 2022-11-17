@@ -1,15 +1,17 @@
 import { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
+import { updateRanking } from '../utils/updateRanking'
 
 const Groups = () => {
 
   const {
     GROUPS,
     COUNTRIES,
+    setCountries,
   } = useContext(GlobalContext)
 
   const handleClick = (group, country) => {
-    console.log(group, country)
+    setCountries(updateRanking(group, country, COUNTRIES))
   }
 
   if (!GROUPS) {
