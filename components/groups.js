@@ -8,6 +8,10 @@ const Groups = () => {
     COUNTRIES,
   } = useContext(GlobalContext)
 
+  const handleClick = (group, country) => {
+    console.log(group, country)
+  }
+
   if (!GROUPS) {
     return <></>
   }
@@ -24,7 +28,7 @@ const Groups = () => {
             <span>Group {g}</span>
           </li>
           {COUNTRIES[g].map((c) => (
-            <li key={c.name}>
+            <li key={c.name} onClick={() => handleClick(g, c)}>
               <a className="py-1 text-sm">
                 {c.rank === 'first' && (
                   <span role="img" aria-label="first" className="mr-1">
