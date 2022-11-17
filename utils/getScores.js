@@ -1,5 +1,5 @@
 import _find from 'lodash/find'
-const _sortBy = require('lodash/sortBy')
+import _sortBy from 'lodash/sortBy'
 
 const FIRST = 7
 const SECOND = 3
@@ -19,13 +19,13 @@ export const getScores = (entries, rankings) => {
       const isFirstSeed = i % 2 === 0
       if (entry[k].name === FINAL[k] && isFirstSeed) {
         entry[k].score = FIRST
-        entry.total += FIRST
       }
       if (entry[k].name === FINAL[k] && !isFirstSeed) { // second place
         entry[k].score = SECOND
-        entry.total += SECOND
       }
     })
+
+    entry.total = keys.filter((k) => (entry[k].score)).map((k) => (entry[k].score)).reduce((partialSum, a) => partialSum + a, 0)
 
     return entry
   })

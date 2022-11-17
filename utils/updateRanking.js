@@ -1,5 +1,6 @@
 import _remove from 'lodash/remove'
 import _includes from 'lodash/includes'
+import _orderBy from 'lodash/orderBy'
 import { getScores } from './getScores'
 
 export const updateRanking = (group, country, COUNTRIES, entries, invalidGroups) => {
@@ -60,11 +61,12 @@ export const updateRanking = (group, country, COUNTRIES, entries, invalidGroups)
   // only if all groups are valid will we update the entries
   let updatedEntries = []
   if (invalid.length === 0) {
-    updatedEntries = getScores(entries, rankings)
+    updatedEntries = _orderBy(getScores(entries, rankings), ['total'], ['desc'])
+    console.log('*', updatedEntries);
   } else {
     updatedEntries = entries.map((e) => ({
       ...e,
-      total: null
+      total: 0
     }))
   }
 
