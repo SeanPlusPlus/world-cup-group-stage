@@ -8,11 +8,13 @@ const Entries = () => {
     entries,
     COUNTRIES,
     // setEntries,
-    // setCountries,
+    setCountries,
   } = useContext(GlobalContext)
 
   const handleClick = (e) => {
-    setPerfect(e, COUNTRIES, entries)
+    const { standings } = setPerfect(e, COUNTRIES, entries)
+    console.log('stand', standings);
+    setCountries(standings)
   }
 
   if (!entries) {
