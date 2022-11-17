@@ -12,7 +12,7 @@ const Entries = () => {
   }
 
   return (
-    <div className="mt-2 mr-3 ml-2">
+    <div className="mt-2 mr-3 ml-3">
       <div className="menu bg-base-100">
         <div className="menu-title pt-2">
           <span>
