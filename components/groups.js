@@ -59,7 +59,7 @@ const Groups = () => {
                 {!c.rank && (
                   <input type="radio" checked="" className="radio-xs hover:cursor-pointer" onChange={() => {}}/>
                 )}
-                <span className={!c.rank ? 'opacity-80' : 'font-bold opacity-100'}>
+                <span className={!c.rank ? 'opacity-90' : 'font-bold opacity-100'}>
                   {c.name} {c.flag}
                 </span>
               </a>
