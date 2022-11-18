@@ -20,7 +20,7 @@ export default function App() {
       }
     }, 3000);
     return () => clearTimeout(timer)
-  }, [toast])
+  }, [toast, setToast])
 
   return (
     <div className="grid-bg md:h-screen">
