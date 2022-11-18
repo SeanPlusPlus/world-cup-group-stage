@@ -63,6 +63,8 @@ const Chart = () => {
                   }))
                 }
                 label={({ dataEntry }) => dataEntry.title}
+                lineWidth={55}
+                labelPosition={75}
               />
             </div>
           ))}
