@@ -9,12 +9,14 @@ const Entries = () => {
     COUNTRIES,
     setEntries,
     setCountries,
+    setToast,
   } = useContext(GlobalContext)
 
   const handleClick = (e) => {
     const { standings, updatedEntries } = setPerfect(e, COUNTRIES, entries)
     setCountries(standings)
     setEntries(updatedEntries)
+    setToast(false)
   }
 
   if (!entries) {

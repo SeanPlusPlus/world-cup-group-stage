@@ -11,7 +11,7 @@ const { env: { NODE_ENV }} = process
 const initialState = {
   NODE_ENV,
   modal: {},
-  toast: false,
+  toast: null,
   GROUPS: null,
   COUNTRIES: null,
   entries: null,
@@ -69,6 +69,7 @@ export const GlobalProvider = ({
       {
         ...state,
         setModal,
+        setToast,
         setGroups,
         setCountries,
         setEntries,

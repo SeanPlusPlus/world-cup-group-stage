@@ -12,7 +12,7 @@ const Help = () => {
 
   return (
     <div className="toast">
-      <div className="alert alert-success">
+      <div className="alert alert-warning">
         <div>
           <span>Try clicking on a name or a team</span>
         </div>

@@ -12,6 +12,7 @@ const Groups = () => {
     COUNTRIES,
     setCountries,
     setEntries,
+    setToast,
   } = useContext(GlobalContext)
 
   const handleClick = (group, country) => {
@@ -19,6 +20,7 @@ const Groups = () => {
     setInvalidGroups(invalid)
     setCountries(rankings)
     setEntries(updatedEntries)
+    setToast(false)
   }
 
   if (!GROUPS) {
