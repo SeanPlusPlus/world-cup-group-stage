@@ -44,7 +44,7 @@ const Nav = () => {
             </svg>
           </button>
           <button
-            className="mr-1 btn btn-outline border-sky-50"
+            className="md:mr-1 btn btn-outline border-sky-50"
             onClick={handleOpenAbout}
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-sky-50">
