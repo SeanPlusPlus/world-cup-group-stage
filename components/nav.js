@@ -1,5 +1,7 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { useContext } from 'react'
+import { useRouter } from 'next/router'
 import { GlobalContext } from '../context/GlobalState'
 
 // modals 
@@ -7,11 +9,16 @@ import About from './modals/About'
 import Chart from './modals/Chart'
 
 const Nav = () => {
-  const titleShort = 'Group Stage'
   const {
     setModal,
     setToast,
   } = useContext(GlobalContext)
+
+  const router = useRouter()
+
+  const handleRefresh = () => {
+    router.reload(window.location.pathname)
+  }
  
   const handleOpenChart = () => {
     setModal({chart: 'modal-open'})
@@ -28,8 +35,13 @@ const Nav = () => {
       <div className="navbar shadow-lg bg-neutral text-neutral-content">
         <div className="flex-1">
           <Link href="/" passHref>
-            <button className="btn btn-outline normal-case text-xl md:ml-2 border-sky-50">
-              <span className="text-slate-300">{titleShort}</span>
+            <button className="btn btn-outline normal-case text-xl md:ml-2 border-sky-50" onClick={handleRefresh}>
+              <Image
+                alt="logo"
+                src="/trophy_circle.png"
+                height={40}
+                width={40}
+              />
             </button>
           </Link>
         </div>
