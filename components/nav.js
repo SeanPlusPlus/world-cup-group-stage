@@ -28,7 +28,7 @@ const Nav = () => {
       <div className="navbar shadow-lg bg-neutral text-neutral-content">
         <div className="flex-1">
           <Link href="/" passHref>
-            <button className="btn btn-outline normal-case text-xl ml-2 border-sky-50">
+            <button className="btn btn-outline normal-case text-xl md:ml-2 border-sky-50">
               <span className="text-slate-300">{titleShort}</span>
             </button>
           </Link>
