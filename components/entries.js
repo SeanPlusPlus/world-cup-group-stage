@@ -27,7 +27,7 @@ const Entries = () => {
         <tbody>
           {entries.map((e) => (
             <tr key={e.name}>
-              <td onClick={() => handleClick(e)} className="hover:cursor-pointer hover:text-sky-500">
+              <td onClick={() => handleClick(e)} className="hover:cursor-pointer font-bold text-sky-500 flex hover:underline">
                 {e.name}
               </td>
               <td>
