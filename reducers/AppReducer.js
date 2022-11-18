@@ -12,6 +12,11 @@ export default (state, action) => {
         ...state,
         modal: action.payload,
       }
+    case 'UPDATE_TOAST':
+      return {
+        ...state,
+        toast: action.payload,
+      }
     case 'UPDATE_GROUPS':
       return {
         ...state,

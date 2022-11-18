@@ -2,6 +2,7 @@
 import Header from '../components/header'
 import Nav from '../components/nav'
 import Home from '../components/home'
+import Help from '../components/help'
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <Header />
       <Nav />
       <Home />
+      <Help />
     </div>
   )
 }

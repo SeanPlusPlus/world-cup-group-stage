@@ -24,6 +24,12 @@ const Entries = () => {
   return (
     <div className="pr-4 mt-3">
       <table className="table table-compact w-full border-0 ml-2">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Total</th>
+          </tr>
+        </thead>
         <tbody>
           {entries.map((e) => (
             <tr key={e.name}>

@@ -11,6 +11,7 @@ const { env: { NODE_ENV }} = process
 const initialState = {
   NODE_ENV,
   modal: {},
+  toast: false,
   GROUPS: null,
   COUNTRIES: null,
   entries: null,
@@ -27,6 +28,13 @@ export const GlobalProvider = ({
   function setModal(data) {
     dispatch({
       type: 'UPDATE_MODAL',
+      payload: data
+    });
+  }
+
+  function setToast(data) {
+    dispatch({
+      type: 'UPDATE_TOAST',
       payload: data
     });
   }
