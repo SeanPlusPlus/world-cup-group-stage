@@ -8,7 +8,8 @@ const Chart = () => {
   const {
     modal,
     setModal,
-    COUNTRIES,
+    responses,
+    COUNTRIES
   } = useContext(GlobalContext)
 
   if (!COUNTRIES) {
@@ -36,32 +37,34 @@ const Chart = () => {
           </span>
         </h3>
         <div>
-          <div className="text-xl">
-            <span className="mr-1">
-              Group A 
-            </span>
-            <span role="img" aria-label="first">
-              🥇
-            </span>
-          </div>
-
-          <div>==========</div>
-
-          <ul>
-            { COUNTRIES['A'].map((c) => (
-              <li key={c.name} className="text-sm list-disc ml-5">{c.name} {c.flag}</li>
-            ))}
-          </ul>
-          <PieChart
-            data={
-              COUNTRIES['A'].map((c, i) => ({
-                title: c.flag,
-                value: i+1,
-                color: COLORS[i]
-              }))
-            }
-            label={({ dataEntry }) => dataEntry.title}
-          />
+          {responses.map((r) => (
+            <div key={r.name} className="mb-5">
+              <div className="text-xl">
+                <span className="mr-1">
+                  {r.title}
+                </span>
+                <span role="img" aria-label="first">
+                  {r.icon}
+                </span>
+              </div>
+              <div>==========</div>
+              <ul>
+                { r.teams.map((t) => (
+                  <li key={t.name} className="text-sm list-disc ml-5"><code>({t.total})</code> {t.name} {t.flag}</li>
+                ))}
+              </ul>
+              <PieChart
+                data={
+                  r.teams.filter((t) => (t.total > 0)).map((t, i) => ({
+                    title: t.flag,
+                    value: t.total,
+                    color: COLORS[i]
+                  }))
+                }
+                label={({ dataEntry }) => dataEntry.title}
+              />
+            </div>
+          ))}
         </div>
         <div className="modal-action pt-5">
           <label htmlFor="my-modal" className="btn" onClick={handleClose}>Close</label>

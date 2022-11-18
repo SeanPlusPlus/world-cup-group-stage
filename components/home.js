@@ -11,6 +11,7 @@ const Home = () => {
     setGroups,
     setCountries,
     setEntries,
+    setResponses,
   } = useContext(GlobalContext)
 
   useEffect(() => {
@@ -22,6 +23,7 @@ const Home = () => {
       setGroups(result.data.GROUPS)
       setCountries(result.data.COUNTRIES)
       setEntries(result.data.entries)
+      setResponses(result.data.responses)
     }
 
     fetchData()

@@ -15,6 +15,7 @@ const initialState = {
   GROUPS: null,
   COUNTRIES: null,
   entries: null,
+  responses: null,
 }
 
 export const GlobalContext = createContext(initialState);
@@ -60,6 +61,12 @@ export const GlobalProvider = ({
     });
   }
 
+  function setResponses(data) {
+    dispatch({
+      type: 'UPDATE_RESPONSES',
+      payload: data
+    });
+  }
 
   useEffect(() => {
     log('state', 'rgb(217, 38, 169)', state);
@@ -73,6 +80,7 @@ export const GlobalProvider = ({
         setGroups,
         setCountries,
         setEntries,
+        setResponses,
       }
     } > {
       children

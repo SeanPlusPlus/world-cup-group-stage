@@ -32,6 +32,11 @@ export default (state, action) => {
         ...state,
         entries: action.payload,
       }
+    case 'UPDATE_RESPONSES':
+      return {
+        ...state,
+        responses: action.payload,
+      }
     default:
       return state;
   }
