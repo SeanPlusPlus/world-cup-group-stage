@@ -29,9 +29,10 @@ const About = () => {
             Fill out <a className="link text-sky-500" href="https://forms.gle/nkZy6r5oWwTpCL2C8" target="_blank" rel="noopener noreferrer">this form</a> to play.
           </p>
           <p className="pb-4">
-            And this little dashboard web app right here is a handy way for us to see how our brackets are doing. Click on a name to see a "perfect" score (all of their picks match), or click on a team and you can toggle first / second on and off.
+            And this little dashboard web app right here is a handy way for us to see how our brackets are doing. Click on a name to see a &quot;perfect&quot; score (all of their picks match), or click on a team and you can toggle first / second on and off.
           </p>
           <Image
+            alt="groups"
             src="/groups.png"
             width={350}
             height={350}
