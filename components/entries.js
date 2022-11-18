@@ -30,7 +30,7 @@ const Entries = () => {
           {entries.map((e) => (
             <tr key={e.name}>
               <td onClick={() => handleClick(e)} className="hover:cursor-pointer font-bold text-sky-500 flex hover:underline">
-                <div className="tooltip" data-tip={e.nick_name}>
+                <div>
                   {e.name}
                 </div>
               </td>
