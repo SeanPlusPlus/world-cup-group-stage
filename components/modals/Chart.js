@@ -20,13 +20,6 @@ const Chart = () => {
     setModal({})
   }
 
-  const COLORS = [
-    '#3366CC',
-    '#DC3912',
-    '#FF9900',
-    '#109618'
-  ]
-
   return (
     <div className={`modal ${modal && modal.chart}`}>
       <div className="modal-box relative">
@@ -49,8 +42,16 @@ const Chart = () => {
               </div>
               <div>==========</div>
               <ul>
-                { r.teams.map((t) => (
-                  <li key={t.name} className="text-sm list-disc ml-5"><code>({t.total})</code> {t.name} {t.flag}</li>
+                { r.teams.map((t, i) => (
+                  <li key={t.name} className="text-sm list-disc ml-5 my-2">
+                    <code
+                      className="border p-1 rounded text-xs mr-1"
+                      style={{ borderColor: t.color }}
+                    >{t.total}</code> 
+                    <span>
+                      {t.name} {t.flag}
+                    </span>
+                  </li>
                 ))}
               </ul>
               <PieChart
@@ -58,7 +59,7 @@ const Chart = () => {
                   r.teams.filter((t) => (t.total > 0)).map((t, i) => ({
                     title: t.flag,
                     value: t.total,
-                    color: COLORS[i]
+                    color: t.color
                   }))
                 }
                 label={({ dataEntry }) => dataEntry.title}

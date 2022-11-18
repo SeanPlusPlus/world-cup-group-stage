@@ -1,14 +1,20 @@
-import _countBy from 'lodash/countBy'
+const COLORS = [
+  '#3366CC',
+  '#DC3912',
+  '#FF9900',
+  '#109618'
+]
 
 const getTotals = (teams, key, entries) => {
-  return teams.map((t) => {
+  return teams.map((t, i) => {
     const total = entries.filter((e) => {
       return e[key].name === t.name
     }).length
 
     return {
       ...t,
-      total
+      total,
+      color: COLORS[i]
     }
   })
 }
