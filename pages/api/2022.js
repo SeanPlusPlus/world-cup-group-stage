@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { entries } from "../../data/entries"
+import { getResponses } from "../../utils/responses"
 
 const GROUPS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 
@@ -150,6 +151,8 @@ const COUNTRIES = {
   ],
 }
 
+const responses = getResponses(GROUPS, COUNTRIES, entries)
+
 export default function handler(req, res) {
-  res.status(200).json({ GROUPS, COUNTRIES, entries })
+  res.status(200).json({ responses, GROUPS, COUNTRIES, entries })
 }

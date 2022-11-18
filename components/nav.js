@@ -10,14 +10,17 @@ const Nav = () => {
   const titleShort = 'Group Stage'
   const {
     setModal,
+    setToast,
   } = useContext(GlobalContext)
  
   const handleOpenChart = () => {
     setModal({chart: 'modal-open'})
+    setToast(false)
   }
 
   const handleOpenAbout = () => {
     setModal({about: 'modal-open'})
+    setToast(false)
   }
 
   return (
