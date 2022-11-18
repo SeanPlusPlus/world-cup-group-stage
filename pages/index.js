@@ -18,7 +18,7 @@ export default function App() {
       if (toast === null) {
         setToast(true)
       }
-    }, 5000);
+    }, 7000);
     return () => clearTimeout(timer)
   }, [toast, setToast])
 
