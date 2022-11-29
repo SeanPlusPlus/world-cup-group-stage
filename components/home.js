@@ -1,6 +1,8 @@
 import { useContext, useEffect } from 'react'
 import axios from 'axios'
+import _orderBy from 'lodash/orderBy'
 import { GlobalContext } from '../context/GlobalState'
+import { getScores } from '../utils/getScores'
 
 import Groups from './groups'
 import Entries from './entries'
@@ -22,8 +24,10 @@ const Home = () => {
 
       setGroups(result.data.GROUPS)
       setCountries(result.data.COUNTRIES)
-      setEntries(result.data.entries)
-      setResponses(result.data.responses)
+      setResponses(result.data.entries)
+
+      const scored = _orderBy(getScores(result.data.entries, result.data.COUNTRIES), ['total'], ['desc'])
+      setEntries(scored)
     }
 
     fetchData()
