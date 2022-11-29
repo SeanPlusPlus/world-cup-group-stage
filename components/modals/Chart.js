@@ -16,10 +16,6 @@ const Chart = () => {
     return <></>
   }
 
-  if (!responses || !responses[0].teams) {
-    return <></>
-  }
-
   const handleClose= () => {
     setModal({})
   }
