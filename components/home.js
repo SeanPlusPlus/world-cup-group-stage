@@ -24,7 +24,7 @@ const Home = () => {
 
       setGroups(result.data.GROUPS)
       setCountries(result.data.COUNTRIES)
-      setResponses(result.data.entries)
+      setResponses(result.data.responses)
 
       const scored = _orderBy(getScores(result.data.entries, result.data.COUNTRIES), ['total'], ['desc'])
       setEntries(scored)
