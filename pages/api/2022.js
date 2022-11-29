@@ -15,10 +15,12 @@ const COUNTRIES = {
       flag: '🇪🇨'
     },
     {
+      rank: 'second',
       name: 'Senegal',
       flag: '🇸🇳'
     },
     {
+      rank: 'first',
       name: 'Netherlands',
       flag: '🇳🇱'
     }

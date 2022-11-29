@@ -16,7 +16,7 @@ export default function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (toast === null) {
-        setToast(true)
+        setToast(false)
       }
     }, 7000);
     return () => clearTimeout(timer)
