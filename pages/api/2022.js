@@ -47,6 +47,7 @@ const COUNTRIES = {
   ],
   'C': [
     {
+      rank: 'first',
       name: 'Argentina',
       flag: '🇦🇷'
     },
@@ -59,6 +60,7 @@ const COUNTRIES = {
       flag: '🇲🇽'
     },
     {
+      rank: 'second',
       name: 'Poland',
       flag: '🇵🇱'
     }
