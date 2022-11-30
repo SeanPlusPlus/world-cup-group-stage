@@ -65,10 +65,12 @@ const COUNTRIES = {
   ],
   'D': [
     {
+      rank: 'first',
       name: 'France',
       flag: '🇫🇷'
     },
     {
+      rank: 'second',
       name: 'Australia',
       flag: '🇦🇺'
     },
