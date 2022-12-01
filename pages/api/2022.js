@@ -87,6 +87,7 @@ const COUNTRIES = {
   ],
   'E': [
     {
+      rank: 'second',
       name: 'Spain',
       flag: '🇪🇸'
     },
@@ -99,6 +100,7 @@ const COUNTRIES = {
       flag: '🇩🇪'
     },
     {
+      rank: 'first',
       name: 'Japan',
       flag: '🇯🇵'
     }
