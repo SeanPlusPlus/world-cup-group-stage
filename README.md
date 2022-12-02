@@ -1,3 +1,5 @@
 # World Cup Group Stage Fantasy
 
-git@github.com:SeanPlusPlus/holdem-hands.git
+https://world-cup-group-stage.vercel.app/
+
+Dashboard for World Cup Group Stage Fantasy game
