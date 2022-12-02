@@ -127,6 +127,7 @@ const COUNTRIES = {
   ],
   'G': [
     {
+      rank: 'first',
       name: 'Brazil',
       flag: '🇧🇷'
     },
@@ -135,6 +136,7 @@ const COUNTRIES = {
       flag: '🇷🇸'
     },
     {
+      rank: 'second',
       name: 'Switzerland',
       flag: '🇨🇭'
     },
