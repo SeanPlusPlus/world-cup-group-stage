@@ -145,6 +145,7 @@ const COUNTRIES = {
   ],
   'H': [
     {
+      rank: 'first',
       name: 'Portugal',
       flag: '🇵🇹'
     },
@@ -157,6 +158,7 @@ const COUNTRIES = {
       flag: '🇺🇾'
     },
     {
+      rank: 'second',
       name: 'Korea',
       flag: '🇰🇷'
     }
